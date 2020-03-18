@@ -1,0 +1,2 @@
+1- Eliminação de Gauss-Jordan: Posso usar a eliminação de Gauss no L(matriz triangular inferior)?
+2- Método iterativo de Jacobi/Gauss-Seidel: X0 pode ser B?

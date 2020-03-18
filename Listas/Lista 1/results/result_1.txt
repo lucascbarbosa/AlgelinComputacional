@@ -1,0 +1,4 @@
+Resolução por LU
+x = [[0. 1.]]
+Resolução por Cholesky
+x = [[2. 1.]]

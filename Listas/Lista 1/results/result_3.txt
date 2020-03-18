@@ -1,0 +1,24 @@
+a) Resolver o Sistema: 
+1) Eliminação de Gauss
+x = [[ 5.84 10.26 10.86  7.23]]
+2) Eliminação de Gauss-Jordan
+x = [[ 5.84 10.27 10.87  7.23]]
+3) Decomposição LU
+x = [[ 5.84 10.26 10.86  7.23]]
+4) Decomposição Cholesky
+x = [[ 5.83 10.28 10.89  7.25]]
+5) Modo Iterativo de Jacobi
+Não é possível, pois a matriz não converge para Jacobi.
+6) Modo Iterativo Gauss-Seidel
+x = [ 5.8 10.2 10.8  7.2]
+b) Obter A-1 através do método de Gauss- Jordan
+A-1 =
+[[1.20596    1.60978    1.40598    0.806     ]
+ [1.61125    2.61839286 2.41196429 1.41071429]
+ [1.41191589 2.41892523 2.6114486  1.61214953]
+ [0.80722892 1.40963855 1.60240964 1.20481928]]
+Prova Real A-1 * A = I
+[[ 1.  0. -0.  0.]
+ [-0.  1. -0.  0.]
+ [-0.  0.  1.  0.]
+ [ 0.  0. -0.  1.]]

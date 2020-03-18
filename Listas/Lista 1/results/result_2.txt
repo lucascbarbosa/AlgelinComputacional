@@ -1,0 +1,4 @@
+Resolução por Jacobi
+x = [1.25 1.5  1.25]
+Resolução por Gauss-Seidel
+x = [1.25 1.5  1.25]
