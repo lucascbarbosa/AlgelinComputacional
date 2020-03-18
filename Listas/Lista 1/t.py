@@ -1,2 +1,3 @@
-a = 1
-if a == 1: print('foo') 
+import numpy as np
+
+print(np.ones((2,2)))
