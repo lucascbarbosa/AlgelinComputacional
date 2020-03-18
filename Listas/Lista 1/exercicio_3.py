@@ -16,8 +16,8 @@ def main():
     else:
         m,u = elim(matA)
         x = resolve(u,m.dot(matB))
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
     print('2) Eliminação de Gauss-Jordan')
     results.append('2) Eliminação de Gauss-Jordan')
     if check_singularity(matA):
@@ -27,8 +27,8 @@ def main():
         m1,u = elim(matA)
         m2,diag = elim(u,mode='lower')
         x = resolve(diag,m2.dot(m1.dot(matB)))
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
 
     print('3) Decomposição LU')
     results.append('3) Decomposição LU')
@@ -37,18 +37,18 @@ def main():
         results.append('Não é possível, pois a matriz possui singularidade.')
     else:
         x = decomp_LU(matA,matB)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
 
     print('4) Decomposição Cholesky')
     results.append('4) Decomposição Cholesky')
-    if check_singularity(matA):
-        print('Não é possível, pois a matriz possui singularidade.')
-        results.append('Não é possível, pois a matriz possui singularidade.')
+    x = decomp_Cholesky(matA,matB)
+    if type(x) is str:
+        print(x)
+        results.append(x)
     else:
-        x = decomp_Cholesky(matA,matB)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
 
     print('5) Modo Iterativo de Jacobi')
     results.append('5) Modo Iterativo de Jacobi')
@@ -57,8 +57,8 @@ def main():
         results.append('Não é possível, pois a matriz não converge para Jacobi.') 
     else:
         x = jacobi(matA,matB)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
 
     print('6) Modo Iterativo Gauss-Seidel')
     results.append('6) Modo Iterativo Gauss-Seidel')
@@ -67,8 +67,8 @@ def main():
         results.append('Não é possível, pois a matriz não converge para Gauss-Seidel.') 
     else:
         x = gauss_seidel(matA,matB,tol=0.00001)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
 
     print('b) Obter A-1 através do método de Gauss- Jordan')
     results.append('b) Obter A-1 através do método de Gauss- Jordan')
@@ -88,5 +88,6 @@ def main():
         print('%s' %np.array2string(np.around(a_inv.dot(matA),decimals=0),separator = ' '))
         results.append('%s' %np.array2string(np.around(a_inv.dot(matA),decimals=0),separator = ' '))
     f.write('\n'.join(results))
+    f.close()
 if __name__ == "__main__":
     main()

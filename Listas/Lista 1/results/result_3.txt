@@ -4,9 +4,9 @@ x = [[ 5.84 10.26 10.86  7.23]]
 2) Eliminação de Gauss-Jordan
 x = [[ 5.84 10.27 10.87  7.23]]
 3) Decomposição LU
-x = [[ 5.84 10.26 10.86  7.23]]
+x = [[ 5.8 10.3 10.9  7.2]]
 4) Decomposição Cholesky
-x = [[ 5.83 10.28 10.89  7.25]]
+x = [[ 5.8 10.3 10.9  7.2]]
 5) Modo Iterativo de Jacobi
 Não é possível, pois a matriz não converge para Jacobi.
 6) Modo Iterativo Gauss-Seidel

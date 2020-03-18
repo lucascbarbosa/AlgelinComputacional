@@ -68,10 +68,10 @@ def main():
     results = []
     a = input('Digite a matriz A linearizada com os valores separados por , : ').split(',')
     size = int(sqrt(len(a)))
-    a = list(map(lambda x: int(x),a))
+    a = list(map(lambda x: float(x),a))
     a = np.array(a).reshape((size,size))
     b = input('Digite a matriz B linearizada com os valores separados por , : ').split(',')
-    b = list(map(lambda x: int(x),b))
+    b = list(map(lambda x: float(x),b))
     b = np.array(b)
     print('Resolução por Jacobi')
     results.append('Resolução por Jacobi')
@@ -80,19 +80,20 @@ def main():
         results.append('Erro. Não converge para Jacobi.')
     else:
         x = jacobi(a,b,tol=0.00001)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
         results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
     print('Resolução por Gauss-Seidel')
     results.append('Resolução por Gauss-Seidel')
     if not converge_gauss(a): 
         print('Erro. Não converge para Gauss-Seidel.')
-        print('Erro. Não converge para Gauss-Seidel.')
+        results.append('Erro. Não converge para Gauss-Seidel.')
     else:
        
         x = gauss_seidel(a,b,tol=0.00001)
-        print('x = %s'%np.array2string(x.transpose(),separator=' '))
-        results.append('x = %s'%np.array2string(x.transpose(),separator=' '))
+        print('X_T = %s'%np.array2string(x.transpose(),separator=' '))
+        results.append('X_T = %s'%np.array2string(x.transpose(),separator=' '))
     f.write('\n'.join(results))
+    f.close()
 
 if __name__ == "__main__":
     main()
